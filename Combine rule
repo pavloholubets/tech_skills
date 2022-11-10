@@ -2,12 +2,11 @@ IF loser.collection.internalSourceUpdated in ('COMBINE')
 IF loser.collection.narrCode[n] !=283 AND 
 IF winner.collection.narrCode[n] !=283 
     IF loser.collection.dateReported != winner.collection.dateReported OR 
-    IF winner.collection.narrCode is null AND 
-    IF loser.collection.narrCode[n] = 169 
+    IF winner.collection.narrCode is NOT null AND  // update OR to AND
+    IF loser.collection.narrCode[n] != 169 
         UPDATE purposed.collection.narrCode with loser.collection.narrCode 
         APPLY RULE CL181
     ELSE 
-    IF winner.collection.narrCode[n] = 169 
         UPDATE purposed.collection.narrCode with winner.collection.narrCode 
-        APPLY RULE CL181
+        APPLY RULE CL181     
 END
