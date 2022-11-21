@@ -1,0 +1,9 @@
+z = [[156, 784, 15, 367], [98, 67, 111], [344, 658,14, 3]]
+sump=0
+
+for i in z:
+    for j in i:
+        if j % 2 == 0:
+            sump = sump + j
+
+print(f'Sum of even numbers: {sump}')
