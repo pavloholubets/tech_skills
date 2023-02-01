@@ -1,0 +1,5 @@
+data = [[156, 784, 15, 367], 
+       [98, 67, 111], 
+       [344, 658,14, 3]]
+even_num_sum = sum(elem for sublist in data for elem in sublist if not elem % 2);
+print(even_num_sum)
